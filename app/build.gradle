@@ -1,15 +1,17 @@
 apply plugin: 'com.android.application'
 
+def configInfo = rootProject.ext.android;
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.1"
 
     defaultConfig {
         applicationId "com.example.myjenkins"
-        minSdkVersion 19
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion configInfo.minSdkVersion
+        targetSdkVersion configInfo.targetSdkVersion
+        versionCode  project.VERSION_CODE as int
+        versionName project.VERSION_NAME
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -21,7 +23,6 @@ android {
         }
 
         debug {
-
             minifyEnabled false
 
             shrinkResources false
