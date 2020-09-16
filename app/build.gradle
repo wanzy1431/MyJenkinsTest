@@ -19,6 +19,37 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
+        debug {
+
+            minifyEnabled false
+
+            shrinkResources false
+
+            zipAlignEnabled false
+
+            }
+
+        custom {
+
+            minifyEnabled false
+
+             shrinkResources false
+
+             zipAlignEnabled false
+
+             }
+
+       sourceSets {
+
+            main {
+
+               jni.srcDirs = []
+
+                }
+
+            }
+
     }
 
     lintOptions {
